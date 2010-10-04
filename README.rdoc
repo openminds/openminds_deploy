@@ -1,0 +1,58 @@
+= Openminds Deploy Gem
+
+This is a set of defaults for deploying to the Openminds shared hosting servers. These include our best practices for deployment, and should make a very clean Capfile.
+
+== Available recipes
+* openminds_deploy/defaults[link:openminds_deploy/defaults.rb]   - Defaults for every deployment.
+* openminds_deploy/git[link:openminds_deploy/git.rb]        - for deploying with git.
+* openminds_deploy/svn[link:openminds_deploy/svn.rb]        - for deploying with SVN.
+* openminds_deploy/passenger[link:openminds_deploy/passenger.rb]  - for deploying to a passenger account (zink, pro-004, pro-005, pro-006)
+* openminds_deploy/lighttpd[link:openminds_deploy/lighttpd.rb]   - for deploying to a lighttpd account (zuurstof, kobalt, koper)
+
+== Example recipe
+
+In this recipe we just set-up our user & application-name, the repository (git in this case) where our application can be found, the server we are deploying to, and require the necesarry deployment files.
+  
+The block around it is a conveniece rescue if someone would deploy with this Capfile that doesn't have this gem installed. The require's can be edited like you need.
+
+  load 'deploy' if respond_to?(:namespace) # cap2 differentiator
+  
+  set :user, "account_name"
+  set :application, "my_application"
+  
+  set :repository, "git@server.openminds.be:git/my_application.git"
+  
+  server 'server.openminds.be', :app, :web, :db, :primary => true
+  
+  begin
+    require 'openminds_deploy/defaults'
+    require 'openminds_deploy/git'
+    require 'openminds_deploy/passenger'
+    require 'openminds_deploy/rails3'
+  rescue LoadError
+    $stderr.puts <<INSTALL
+  You need the openminds_deploy gem (which simplifies this Capfile) to deploy this application
+  Install the gem like this:
+    gem install openminds_deploy
+  INSTALL
+    exit 1
+  end
+  
+== Recipes in detail
+=== openminds_deploy/defaults
+This sets up variables like use_sudo and group_writable, enables SSH forwarding, and adds a task to link config/database.yml.
+
+=== openminds_deploy/git
+This sets up the SCM and enables git-submodules to be installed.
+
+=== openminds_deploy/svn
+This sets up the SCM to svn and adds a password-prompt (Don't keep your password in your SCM!)
+
+=== openminds_deploy/passenger
+This sets up all stop/start/restart tasks for Passenger
+
+=== openminds_deploy/lighttpd
+This sets up all stop/start/restart tasks for Lighttpd
+
+=== openminds_deploy/rails3
+This sets up bundling tasks with Bundler and does a basic check to see if the server you're on supports Rails 3.
