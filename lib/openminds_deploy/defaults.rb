@@ -1,20 +1,14 @@
 configuration = Capistrano::Configuration.respond_to?(:instance) ? Capistrano::Configuration.instance(:must_exist) : Capistrano.configuration(:must_exist)
 
 configuration.load do
-  def _cset(name, *args, &block)
-    unless exists?(name)
-      set(name, *args, &block)
-    end
-  end
-  
-  _cset :use_sudo, false
-  _cset :group_writable, false     # Shared environment
-  _cset :keep_releases, 3      # 3 Releases should be enough
-  _cset :deploy_via, :remote_cache
+  set :use_sudo, false
+  set :group_writable, false     # Shared environment
+  set :keep_releases, 3      # 3 Releases should be enough
+  set :deploy_via, :remote_cache
   
   default_run_options[:pty] = true
   
-  _cset(:deploy_to) { "/home/#{user}/apps/#{application}" }
+  set(:deploy_to) { "/home/#{user}/apps/#{application}" }
   
   ssh_options[:forward_agent] = true
   
