@@ -5,20 +5,28 @@
 
 Gem::Specification.new do |s|
   s.name = %q{openminds_deploy}
-  s.version = "0.0.1"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jan De Poorter"]
-  s.date = %q{2010-08-30}
+  s.date = %q{2010-10-05}
   s.description = %q{The most commonly used tasks in Capistrano recipes}
   s.email = %q{jan@openminds.be}
+  s.extra_rdoc_files = [
+    "README.rdoc"
+  ]
   s.files = [
-    "Rakefile",
+    "README.rdoc",
+     "Rakefile",
      "VERSION",
      "lib/openminds_deploy.rb",
      "lib/openminds_deploy/defaults.rb",
      "lib/openminds_deploy/git.rb",
-     "lib/openminds_deploy/passenger.rb"
+     "lib/openminds_deploy/lighttpd.rb",
+     "lib/openminds_deploy/passenger.rb",
+     "lib/openminds_deploy/rails3.rb",
+     "lib/openminds_deploy/svn.rb",
+     "openminds_deploy.gemspec"
   ]
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]

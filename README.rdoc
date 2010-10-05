@@ -37,7 +37,18 @@ The block around it is a conveniece rescue if someone would deploy with this Cap
   INSTALL
     exit 1
   end
+
+If you want to override some settings from the openminds_deploy recipes, define them after the openminds block.
+  ...
+  begin
+    require 'openminds_deploy/defaults'
+  rescue LoadError
+    $stderr.puts "Install the openminds_deploy gem"
+    exit 1
+  end
   
+  set :deploy_to, "/home/#{user}/apps/staging/#{application}"
+
 == Recipes in detail
 === openminds_deploy/defaults
 This sets up variables like use_sudo and group_writable, enables SSH forwarding, and adds a task to link config/database.yml.
