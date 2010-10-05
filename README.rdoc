@@ -8,6 +8,7 @@ This is a set of defaults for deploying to the Openminds shared hosting servers.
 * openminds_deploy/svn[link:openminds_deploy/svn.rb]        - for deploying with SVN.
 * openminds_deploy/passenger[link:openminds_deploy/passenger.rb]  - for deploying to a passenger account (zink, pro-004, pro-005, pro-006)
 * openminds_deploy/lighttpd[link:openminds_deploy/lighttpd.rb]   - for deploying to a lighttpd account (zuurstof, kobalt, koper)
+* openminds_deploy/rails3[link:openminds_deploy/rails3.rb]    - if you're deploying a Rails3 application. Takes care of Bundler
 
 == Example recipe
 
