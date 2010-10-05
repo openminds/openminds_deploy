@@ -2,6 +2,10 @@
 
 This is a set of defaults for deploying to the Openminds shared hosting servers. These include our best practices for deployment, and should make a very clean Capfile.
 
+== Installation
+These deploy recipes are all available in the openminds_deploy gem, which can be installed via rubygems:
+  gem install openminds_deploy
+
 == Available recipes
 * openminds_deploy/defaults[link:openminds_deploy/defaults.rb]   - Defaults for every deployment.
 * openminds_deploy/git[link:openminds_deploy/git.rb]        - for deploying with git.
