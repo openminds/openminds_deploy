@@ -32,7 +32,7 @@ configuration.load do
       end
   end
   
-  after('deploy:symlink') do
+  after('deploy:update_code') do
     dbconfig.link
   end
 
