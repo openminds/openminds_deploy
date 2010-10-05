@@ -9,7 +9,7 @@ begin
     # gem.homepage = "http://github.com/jomz/gorilla-capistrano-recipes"
     gem.authors = ["Jan De Poorter"]
   end
-  Jeweler::OpenmindsTask.new
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler openminds_jeweler"
 end
