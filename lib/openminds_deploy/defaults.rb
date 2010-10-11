@@ -30,7 +30,7 @@ configuration.load do
     dbconfig.link
   end
 
-  after :setup do
+  after 'deploy:setup' do
     dbconfig.copy_database_config
   end
 
