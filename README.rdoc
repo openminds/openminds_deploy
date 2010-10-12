@@ -7,12 +7,12 @@ These deploy recipes are all available in the openminds_deploy gem, which can be
   gem install openminds_deploy
 
 == Available recipes
-* openminds_deploy/defaults[link:openminds_deploy/defaults.rb]   - Defaults for every deployment.
-* openminds_deploy/git[link:openminds_deploy/git.rb]        - for deploying with git.
-* openminds_deploy/svn[link:openminds_deploy/svn.rb]        - for deploying with SVN.
-* openminds_deploy/passenger[link:openminds_deploy/passenger.rb]  - for deploying to a passenger account (zink, pro-004, pro-005, pro-006)
-* openminds_deploy/lighttpd[link:openminds_deploy/lighttpd.rb]   - for deploying to a lighttpd account (zuurstof, kobalt, koper)
-* openminds_deploy/rails3[link:openminds_deploy/rails3.rb]    - if you're deploying a Rails3 application. Takes care of Bundler
+* openminds_deploy/defaults   - Defaults for every deployment.
+* openminds_deploy/git        - for deploying with git.
+* openminds_deploy/svn        - for deploying with SVN.
+* openminds_deploy/passenger  - for deploying to a passenger account (zink, pro-004, pro-005, pro-006)
+* openminds_deploy/lighttpd   - for deploying to a lighttpd account (zuurstof, kobalt, koper)
+* openminds_deploy/rails3     - if you're deploying a Rails3 application. Takes care of Bundler
 
 == Example recipe
 
