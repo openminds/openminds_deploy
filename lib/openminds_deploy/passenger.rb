@@ -22,7 +22,7 @@ configuration.load do
 
       desc "Start your application"
       task :start do
-          passenger::start
+          passenger::restart
       end
 
       desc "Stop your application"
