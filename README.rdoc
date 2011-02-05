@@ -16,9 +16,9 @@ These deploy recipes are all available in the openminds_deploy gem, which can be
 
 == Example recipe
 
-In this recipe we just set-up our user & application-name, the repository (git in this case) where our application can be found, the server we are deploying to, and require the necesarry deployment files.
+In this recipe we just set-up our user & application-name, the repository (git in this case) where our application can be found, the server we are deploying to, and require the necessary deployment files.
   
-The block around it is a conveniece rescue if someone would deploy with this Capfile that doesn't have this gem installed. The require's can be edited like you need.
+The block around it is a convenience rescue if someone would deploy with this Capfile that doesn't have this gem installed. The require's can be edited like you need.
 
   load 'deploy' if respond_to?(:namespace) # cap2 differentiator
   
