@@ -17,18 +17,18 @@ These deploy recipes are all available in the openminds_deploy gem, which can be
 == Example recipe
 
 In this recipe we just set-up our user & application-name, the repository (git in this case) where our application can be found, the server we are deploying to, and require the necessary deployment files.
-  
+
 The block around it is a convenience rescue if someone would deploy with this Capfile that doesn't have this gem installed. The require's can be edited like you need.
 
   load 'deploy' if respond_to?(:namespace) # cap2 differentiator
-  
+
   set :user, "account_name"
   set :application, "my_application"
-  
+
   set :repository, "git@server.openminds.be:git/my_application.git"
-  
+
   server 'server.openminds.be', :app, :web, :db, :primary => true
-  
+
   begin
     require 'openminds_deploy/defaults'
     require 'openminds_deploy/git'
@@ -51,7 +51,7 @@ If you want to override some settings from the openminds_deploy recipes, define 
     $stderr.puts "Install the openminds_deploy gem"
     exit 1
   end
-  
+
   set :deploy_to, "/home/#{user}/apps/staging/#{application}"
 
 == Recipes in detail

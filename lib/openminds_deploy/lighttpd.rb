@@ -3,38 +3,37 @@ configuration = Capistrano::Configuration.respond_to?(:instance) ? Capistrano::C
 configuration.load do
   # Lighttpd stuff
   namespace :lighttpd do
-    desc "Restart the web server"
+    desc 'Restart the web server'
     task :restart, :roles => :app do
-      run "lighty restart"
+      run 'lighty restart'
     end
 
-    desc "Stop the web server"
+    desc 'Stop the web server'
     task :stop, :roles => :app do
-      run "lighty stop"
+      run 'lighty stop'
     end
 
-    desc "Start the web server"
+    desc 'Start the web server'
     task :start, :roles => :app do
-      run "lighty start"
+      run 'lighty start'
     end
   end
 
   # Standard deploy actions overwritten
   namespace :deploy do
-    desc "Restart your application"
+    desc 'Restart your application'
     task :restart do
       lighttpd::restart
     end
 
-    desc "Start your application"
+    desc 'Start your application'
     task :start do
       lighttpd::start
     end
 
-    desc "Stop your application"
+    desc 'Stop your application'
     task :stop do
       lighttpd::stop
     end
   end
 end
-

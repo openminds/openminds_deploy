@@ -2,32 +2,31 @@ configuration = Capistrano::Configuration.respond_to?(:instance) ? Capistrano::C
 
 configuration.load do
   namespace :passenger do
-      desc "Restart the web server"
-      task :restart, :roles => :app do
-          run "touch  #{current_release}/tmp/restart.txt"
-      end
+    desc 'Restart the web server'
+    task :restart, :roles => :app do
+      run "touch  #{current_release}/tmp/restart.txt"
+    end
 
-      [:start, :stop].each do |t|
-          desc "#{t} task is a no-op with passenger"
-          task t, :roles => :app do ; end
-      end
+    [:start, :stop].each do |t|
+      desc "#{t} task is a no-op with passenger"
+      task t, :roles => :app do ; end
+    end
   end
 
-
   namespace :deploy do
-      desc "Restart your application"
-      task :restart do
-          passenger::restart
-      end
+    desc 'Restart your application'
+    task :restart do
+      passenger::restart
+    end
 
-      desc "Start your application"
-      task :start do
-          passenger::restart
-      end
+    desc 'Start your application'
+    task :start do
+      passenger::restart
+    end
 
-      desc "Stop your application"
-      task :stop do
-          passenger::stop
-      end
+    desc 'Stop your application'
+    task :stop do
+      passenger::stop
+    end
   end
 end

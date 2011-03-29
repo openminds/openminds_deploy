@@ -17,7 +17,7 @@ configuration.load do
       end
     end
   end
-  
+
   before "deploy:update_code", "openminds:check_rails3_compat"
   before "deploy:setup", "openminds:check_rails3_compat"
 end

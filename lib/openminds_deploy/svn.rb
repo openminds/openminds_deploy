@@ -2,5 +2,5 @@ configuration = Capistrano::Configuration.respond_to?(:instance) ? Capistrano::C
 
 configuration.load do
   set :scm, :svn
-  set :scm_password, Proc.new { CLI.password_prompt "SVN Password: "}
+  set :scm_password, Proc.new {CLI.password_prompt 'SVN Password: '}
 end

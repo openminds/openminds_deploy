@@ -2,6 +2,5 @@ configuration = Capistrano::Configuration.respond_to?(:instance) ? Capistrano::C
 
 configuration.load do
   set :scm, :git
-  set :git_enable_submodules,1
-  
+  set :git_enable_submodules, 1
 end
