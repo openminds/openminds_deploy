@@ -4,7 +4,7 @@ configuration.load do
   namespace :passenger do
     desc 'Restart the web server'
     task :restart, :roles => :app do
-      run "touch  #{current_release}/tmp/restart.txt"
+      run "touch  #{release_path}/tmp/restart.txt"
     end
 
     [:start, :stop].each do |t|
