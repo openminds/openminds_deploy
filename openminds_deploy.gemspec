@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = 'openminds_deploy'
   s.version = OpenmindsDeploy::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors = ['Jan De Poorter', 'Joren De Groof', 'Jeroen Jacobs']
+  s.authors = ['Jan De Poorter', 'Joren De Groof', 'Jeroen Jacobs', 'Bernard Grymonpon']
   s.email = 'devel@openminds.be'
   s.homepage = 'http://openminds.be'
   s.summary = 'Common capistrano recipes for Openminds applications'
