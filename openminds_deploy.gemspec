@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.authors = ['Jan De Poorter', 'Joren De Groof', 'Jeroen Jacobs', 'Bernard Grymonpon']
   s.email = 'devel@openminds.be'
-  s.homepage = 'http://openminds.be'
+  s.homepage = 'http://www.openminds.be'
   s.summary = 'Common capistrano recipes for Openminds applications'
   s.description = 'The most commonly used tasks in Capistrano recipes'
 
