@@ -55,6 +55,19 @@ If you want to override some settings from the openminds_deploy recipes, define 
 
   set :deploy_to, "/home/#{user}/apps/staging/#{application}"
 
+If you deploy a Rails 3.1 application with the default settings, you need to precompile
+the assets upon deployment. A recipe for a simple case is to append these lines
+to the Capfile.
+
+  before "deploy:symlink", "deploy:assets"
+
+  namespace :deploy do
+    desc "Compile assets"
+    task :assets do
+      run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
+    end
+  end
+
 == Recipes in detail
 === openminds_deploy/defaults
 This sets up variables like use_sudo and group_writable, enables SSH forwarding, and adds a task to link config/database.yml.
