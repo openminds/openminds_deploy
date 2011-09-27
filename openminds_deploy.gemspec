@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ['README.rdoc']
   s.rdoc_options = ['--charset=UTF-8']
 
-  s.add_dependency 'capistrano', '~> 2.5.21'
+  s.add_dependency 'capistrano', '>= 2.5'
 end
