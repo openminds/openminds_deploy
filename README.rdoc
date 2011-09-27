@@ -68,6 +68,13 @@ to the Capfile.
     end
   end
 
+Also, the standard capistrano behavior will try to touch the
+public/images, public/javascripts, public/stylesheets which will
+cause warnings. Add this line to the Capfile or deploy.rb to
+avoid that:
+
+  set :normalize_asset_timestamps, false
+
 == Recipes in detail
 === openminds_deploy/defaults
 This sets up variables like use_sudo and group_writable, enables SSH forwarding, and adds a task to link config/database.yml.
