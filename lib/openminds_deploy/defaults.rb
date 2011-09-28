@@ -26,7 +26,7 @@ configuration.load do
     end
   end
 
-  after 'deploy:update_code' do
+  after 'deploy:finalize_update' do
     dbconfig.link
   end
 
