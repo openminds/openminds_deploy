@@ -55,9 +55,13 @@ If you want to override some settings from the openminds_deploy recipes, define 
 
   set :deploy_to, "/home/#{user}/apps/staging/#{application}"
 
-If you deploy a Rails 3.1 application with the default settings, you need to precompile
-the assets upon deployment. A recipe for a simple case is to append these lines
-to the Capfile.
+=== Rails 3.1 with asset pipeline
+
+If you deploy a Rails 3.1 application with the default settings, you need to precompile the assets upon deployment. If you are using capistrano >= 2.8.0 you can add the following line to your Capifile:
+
+  load 'deploy/assets'
+
+If you are using an older version of capistrano, you should upgrade to a later version. If for some reason you can't do that, you can append these lines to your Capfile:
 
   before "deploy:symlink", "deploy:assets"
 
