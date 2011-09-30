@@ -8,7 +8,7 @@ configuration.load do
 
   default_run_options[:pty] = true
 
-  set(:deploy_to) {"/home/#{user}/apps/#{application}"}
+  set :deploy_to, "/home/#{user}/apps/#{application}"
 
   ssh_options[:forward_agent] = true
 
