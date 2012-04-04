@@ -26,15 +26,9 @@ configuration.load do
     end
   end
 
-  after 'deploy:finalize_update' do
-    dbconfig.link
-  end
+  after 'deploy:finalize_update', 'dbconfig:link'
 
-  after 'deploy:setup' do
-    dbconfig.copy_database_config
-  end
+  after 'deploy:setup', 'dbconfig:copy_database_config'
 
-  after :deploy do
-    deploy.cleanup
-  end
+  after :deploy, 'deploy:cleanup'
 end
