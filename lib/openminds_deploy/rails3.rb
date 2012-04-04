@@ -1,7 +1,7 @@
 begin
   require 'bundler/capistrano'
 rescue LoadError
-  $stderr.puts <<INSTALL
+  $stderr.puts <<-INSTALL
 The openminds_deploy/rails3 recipe requires bundler's deploy task. For this to work we need the bundler gem (>=1.0.0):
   gem install bundler
 INSTALL
