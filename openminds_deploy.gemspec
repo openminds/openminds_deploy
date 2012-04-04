@@ -12,10 +12,10 @@ Gem::Specification.new do |s|
   s.summary = 'Common capistrano recipes for Openminds applications'
   s.description = 'The most commonly used tasks in Capistrano recipes'
 
-  s.files = Dir['lib/**/*', 'README.rdoc']
+  s.files = Dir['lib/**/*', 'README.md']
   s.require_paths = ['lib']
 
-  s.extra_rdoc_files = ['README.rdoc']
+  s.extra_rdoc_files = ['README.md']
   s.rdoc_options = ['--charset=UTF-8']
 
   s.add_dependency 'capistrano', '>= 2.5'
