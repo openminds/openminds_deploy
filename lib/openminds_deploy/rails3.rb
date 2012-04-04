@@ -13,11 +13,11 @@ configuration.load do
   namespace :openminds do
     task :check_rails3_compat do
       if roles[:app].servers.any? {|server| %w(zuurstof.openminds.be kobalt.openminds.be koper.openminds.be zink.openminds.be).include?(server.host) }
-      abort "This server is not Rails 3 compatible. Mail support@openminds.be to move your account to a compatible server."
+        abort 'This server is not Rails 3 compatible. Mail support@openminds.be to move your account to a compatible server.'
       end
     end
   end
 
-  before "deploy:update_code", "openminds:check_rails3_compat"
-  before "deploy:setup", "openminds:check_rails3_compat"
+  before 'deploy:update_code', 'openminds:check_rails3_compat'
+  before 'deploy:setup', 'openminds:check_rails3_compat'
 end
