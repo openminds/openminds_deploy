@@ -31,4 +31,9 @@ configuration.load do
   after 'deploy:setup', 'dbconfig:copy_database_config'
 
   after :deploy, 'deploy:cleanup'
+
+  desc 'Tail application log'
+  task :tail_log, :roles => :app do
+    sudo "tail -f #{shared_path}/log/#{rails_env}.log"
+  end
 end
