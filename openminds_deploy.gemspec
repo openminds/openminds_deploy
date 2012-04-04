@@ -4,7 +4,7 @@ require 'openminds_deploy/version'
 
 Gem::Specification.new do |s|
   s.name = 'openminds_deploy'
-  s.version = '1.0.4'
+  s.version = '1.0.5.beta'
   s.platform = Gem::Platform::RUBY
   s.authors = ['Jan De Poorter', 'Joren De Groof', 'Jeroen Jacobs', 'Bernard Grymonpon']
   s.email = 'devel@openminds.be'
