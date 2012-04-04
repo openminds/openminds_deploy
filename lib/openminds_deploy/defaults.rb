@@ -25,9 +25,7 @@ configuration.load do
       run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     end
   end
-
   after 'deploy:finalize_update', 'dbconfig:link'
-
   after 'deploy:setup', 'dbconfig:copy_database_config'
 
   after :deploy, 'deploy:cleanup'
