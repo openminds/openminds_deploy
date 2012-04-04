@@ -45,6 +45,6 @@ configuration.load do
 
   desc 'Tail application log'
   task :tail_log, :roles => :app do
-    sudo "tail -f #{shared_path}/log/#{rails_env}.log"
+    run "tail -f #{shared_path}/log/#{rails_env}.log"
   end
 end
