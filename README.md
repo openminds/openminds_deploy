@@ -103,3 +103,24 @@ avoid that:
 ### openminds_deploy/rails3
 * sets up bundling tasks with Bundler and does a basic check to see if the server you're on supports Rails 3.
 * only precompiles assets if there are changes detected in your assets or Gemfile
+
+### openminds_deploy/configs
+* gives you some tasks to copy and symlink config files to the server
+
+#### Example ####
+To set up [Faye](http://faye.jcoglan.com/) you might have different configs for each environment (development, staging, production, ...). For doing so you might create the following config in `config/faye.yml`
+
+    development:
+      server_url: https://example.dev:9292/faye
+
+    staging:
+      server_url: https://staging.example.com:9292/faye
+
+    production:
+      server_url: https://example.com:9292/faye
+
+Once you have that set up, you'll want to create the config during the first deploy and symlink the configs after each deploy. To set that up you'll have to set the `configs` variable in your `Capfile`:
+
+    set :configs, %w[faye]
+
+Don't forget to require `openminds_deploy/configs` **after** setting the variable. That's it, now your configs will be copied and symlinked automatically.
