@@ -3,7 +3,7 @@ $:.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'openminds_deploy'
-  s.version = '1.0.5'
+  s.version = '1.0.6'
   s.platform = Gem::Platform::RUBY
   s.authors = ['Jan De Poorter', 'Joren De Groof', 'Jeroen Jacobs', 'Bernard Grymonpon']
   s.email = 'devel@openminds.be'
