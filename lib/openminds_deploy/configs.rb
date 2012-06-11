@@ -12,7 +12,7 @@ configuration.load do
         task :copy do
           run "mkdir -p #{shared_path}/config"
 
-          CONFIG = YAML.load_file(%Q{./config/#{name}.yml})[rails_env]
+          CONFIG = YAML.load_file(%Q{./config/#{name}.yml})[rails_env.to_s]
           put CONFIG.map{|key, value| "#{key}: #{value}\n"}.join, "#{shared_path}/config/#{name}.yml"
         end
 
